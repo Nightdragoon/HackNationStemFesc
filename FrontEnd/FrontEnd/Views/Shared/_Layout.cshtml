@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using FrontEnd.Dtos
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,6 +8,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/FrontEnd.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
 </head>
 <body>
     <header>
@@ -25,6 +28,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -35,6 +42,49 @@
             @RenderBody()
         </main>
     </div>
+    <!-- MODAL login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-black">
+
+                <!-- Encabezado con degradado -->
+                <div class="login-head">
+                    <h1 class="fs-3 mb-1">Iniciar Sesión</h1>
+                    <small>Portal Prehispánico</small>
+                    <button type="button" class="btn-close btn-close-white position-absolute end-0 top-0 m-3"
+                            data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <!-- Cuerpo -->
+                <div class="modal-body p-4">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input class="form-control" id="email" placeholder="nombre" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" placeholder="••••••••" required>
+                                <button class="btn btn-outline-secondary" type="button" id="togglePwd" aria-label="Mostrar/Ocultar">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-success w-100 mb-3" id="btnEntrar">Entrar</button>
+
+                        <p class="mt-4 mb-0 text-center">
+                            <span class="text-secondary">¿No tienes cuenta?</span>
+                            <a href="#" class="link-soft text-decoration-none">Regístrate aquí</a>
+                        </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
     <footer class="border-top footer text-muted">
         <div class="container">
@@ -43,7 +93,52 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/Login.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        const urlAutenticacion = '@ConfigurationUrl.GetBaseUrl()/loginUsuario';
+    </script>
+    <script>
+         $("#btnEntrar").on("click", async function () {
+             let result = await fetch(urlAutenticacion , {
+                 method:'POST' ,
+                 headers:{
+                    'accept': 'application/json',
+                   'Content-Type': 'application/json'
+                 },
+                 body:JSON.stringify({
+                    nombre:$("#email").val(),
+                    contrasena:$("#password").val()
+                 })
+
+             })
+             let response = await result.json();
+             if(response.isSuccess == false){
+             Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: response.message
+              });
+              return;
+             }
+             if(response.isSuccess == true && response.exists == false){
+                 Swal.fire({
+                  icon: "question",
+                  title: "Oops...",
+                  text: "the user that you are looking for dont existes"
+                  });
+             return;
+             }
+              Swal.fire({
+                 icon: "success",
+                 title: "Logeado",
+                 text: "te has logeado correctamente"
+                 });
+
+         })
+
+    </script>
 </body>
 </html>
