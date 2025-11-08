@@ -4,6 +4,7 @@ from sqlalchemy.ext.automap import automap_base
 from UsuarioInsertar import UsuarioInsertar
 from UsuarioBuscar import UsuarioBuscar
 from fastapi.middleware.cors import CORSMiddleware
+from orchestrator import Orchestrator
 
 engine = create_engine("mysql+pymysql://upiw3mqa58obep4h:VMqMoO6MuFgXjBt6ddl@b96lcxztraqbollhfyj6-mysql.services.clever-cloud.com:20670/b96lcxztraqbollhfyj6")
 
@@ -19,6 +20,13 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+gemini_api = ""
+stmt = Select(Base.classes.APIS).where(Base.classes.APIS.nombre == "gemini")
+with engine.connect() as connection:
+    result = connection.execute(stmt)
+    for row in result:
+        gemini_api = row._data[2]
 
 
 @app.post("/registrarUsuario")
@@ -41,11 +49,12 @@ async def loginUsuario(usuario: UsuarioInsertar):
             result = connection.execute(buscar)
             for row in result:
                 if row != None:
-                    return UsuarioBuscar(True , "usuario logeado" , True)
+                    return UsuarioBuscar(True , "usuario logeado" , True , row._data[0])
 
-        return UsuarioBuscar(True, "usuario no encontrado", False)
+        return UsuarioBuscar(True, "usuario no encontrado", False , 0)
     except Exception as e:
         return {"isSuccess": False , "message": str(e)}
+
 
 
 

@@ -13,8 +13,9 @@ namespace FrontEnd.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int id = 1)
         {
+            ViewBag.Id = id;
             return View();
         }
         public IActionResult Login()
