@@ -20,3 +20,93 @@ html {
 body {
   margin-bottom: 60px;
 }
+.modal-content {
+    color: white;
+    background-color: black
+    border: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(0,0,0,.55);
+}
+
+.login-head {
+    background: linear-gradient(45deg,var(--grad-a),var(--grad-b));
+    padding: 26px 28px 22px;
+    position: relative;
+}
+
+    .login-head h1 {
+        font-weight: 800;
+        letter-spacing: .4px;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    .login-head small {
+        opacity: .9;
+    }
+
+.form-label {
+    color: #d8d1c6;
+    font-weight: 600;
+}
+
+.form-control {
+    background: var(--input);
+    border: 1px solid var(--input-b);
+    color: #eee;
+    border-radius: 12px;
+    padding: .75rem 1rem;
+}
+
+    .form-control::placeholder {
+        color: var(--txt-soft);
+    }
+
+.btn-gradient {
+    background: linear-gradient(45deg,var(--grad-a),var(--grad-b));
+    border: 0;
+    color: #1b1b1b;
+    font-weight: 700;
+    padding: .8rem 1rem;
+    border-radius: 12px;
+}
+
+    .btn-gradient:active {
+        transform: translateY(1px);
+    }
+
+.sep {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    color: #bfb6a9;
+}
+
+    .sep::before, .sep::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #3a332c;
+    }
+
+.btn-social {
+    background: transparent;
+    border: 1px solid #3a332c;
+    color: #e6e0d6;
+    border-radius: 12px;
+    padding: .6rem .9rem;
+}
+
+    .btn-social:hover {
+        background: #1f1d1a;
+        color: #fff;
+    }
+
+.link-soft {
+    color: #a89e92;
+}
+
+    .link-soft:hover {
+        color: #fff;
+    }
