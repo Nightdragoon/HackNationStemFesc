@@ -3,48 +3,269 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container">
-    <div class="d-flex flex-column">
-        <p>what we will work today</p>
+<div class="main-container">
+    <!-- Title -->
+    <div class="title-main">
+        <div class="title-stars">
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#3C55E6" d="M10.577 8.704C11.21 7.568 11.527 7 12 7s.79.568 1.423 1.704l.164.294c.18.323.27.484.41.59c.14.107.316.147.665.226l.318.072c1.23.278 1.845.417 1.991.888c.147.47-.273.96-1.111 1.941l-.217.254c-.238.278-.357.418-.41.59c-.055.172-.037.358 0 .73l.032.338c.127 1.308.19 1.962-.193 2.253c-.383.29-.958.026-2.11-.504l-.298-.138c-.327-.15-.49-.226-.664-.226c-.173 0-.337.076-.664.226l-.298.138c-1.152.53-1.727.795-2.11.504c-.383-.29-.32-.945-.193-2.253l.032-.338c.037-.372.055-.558 0-.73c-.053-.172-.172-.312-.41-.59l-.217-.254c-.838-.98-1.258-1.47-1.111-1.941c.146-.47.76-.61 1.99-.888l.319-.072c.35-.08.524-.119.665-.225c.14-.107.23-.268.41-.59z" /><path fill="#3C55E6" fill-rule="evenodd" d="M12 1.25a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0V2a.75.75 0 0 1 .75-.75m6.53 4.22a.75.75 0 0 1 0 1.06l-.343.343a.75.75 0 0 1-1.06-1.06l.343-.343a.75.75 0 0 1 1.06 0m-13.06 0a.75.75 0 0 1 1.06 0l.344.343a.75.75 0 0 1-1.061 1.06L5.47 6.53a.75.75 0 0 1 0-1.06M1.25 12a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1-.75-.75m18 0a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1-.75-.75M6.873 17.127a.75.75 0 0 1 0 1.06l-.343.343a.75.75 0 0 1-1.06-1.06l.343-.343a.75.75 0 0 1 1.06 0m10.253 0a.75.75 0 0 1 1.061 0l.343.343a.75.75 0 0 1-1.06 1.06l-.343-.343a.75.75 0 0 1 0-1.06M12 19.25a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 1 .75-.75" clip-rule="evenodd" /></svg>
+            <span><span style="color: #3C55E6;">Z</span><span style="color: #E20262;">an</span><span style="color: #A373D7;">-</span><span style="color: #FF7401;">AI</span></span>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#3C55E6" d="M10.577 8.704C11.21 7.568 11.527 7 12 7s.79.568 1.423 1.704l.164.294c.18.323.27.484.41.59c.14.107.316.147.665.226l.318.072c1.23.278 1.845.417 1.991.888c.147.47-.273.96-1.111 1.941l-.217.254c-.238.278-.357.418-.41.59c-.055.172-.037.358 0 .73l.032.338c.127 1.308.19 1.962-.193 2.253c-.383.29-.958.026-2.11-.504l-.298-.138c-.327-.15-.49-.226-.664-.226c-.173 0-.337.076-.664.226l-.298.138c-1.152.53-1.727.795-2.11.504c-.383-.29-.32-.945-.193-2.253l.032-.338c.037-.372.055-.558 0-.73c-.053-.172-.172-.312-.41-.59l-.217-.254c-.838-.98-1.258-1.47-1.111-1.941c.146-.47.76-.61 1.99-.888l.319-.072c.35-.08.524-.119.665-.225c.14-.107.23-.268.41-.59z" /><path fill="#3C55E6" fill-rule="evenodd" d="M12 1.25a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0V2a.75.75 0 0 1 .75-.75m6.53 4.22a.75.75 0 0 1 0 1.06l-.343.343a.75.75 0 0 1-1.06-1.06l.343-.343a.75.75 0 0 1 1.06 0m-13.06 0a.75.75 0 0 1 1.06 0l.344.343a.75.75 0 0 1-1.061 1.06L5.47 6.53a.75.75 0 0 1 0-1.06M1.25 12a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1-.75-.75m18 0a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1-.75-.75M6.873 17.127a.75.75 0 0 1 0 1.06l-.343.343a.75.75 0 0 1-1.06-1.06l.343-.343a.75.75 0 0 1 1.06 0m10.253 0a.75.75 0 0 1 1.061 0l.343.343a.75.75 0 0 1-1.06 1.06l-.343-.343a.75.75 0 0 1 0-1.06M12 19.25a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 1 .75-.75" clip-rule="evenodd" /></svg>
+        </div>
+    </div>
 
-        <div class="d-flex flex-row">
-            <input class="form-control" id="barraBusqueda" />
-            <button class="btn btn-secondary" id="btnEnviarDatos" data-id=@ViewBag.id>
-                <i class="bi bi-send"></i>
+
+    <div class="subtitle">the best ally in your research</div>
+
+    <div class="question-text">What will we investigate today?</div>
+
+    <!-- Search & File Upload Container -->
+    <div class="search-container">
+        <!-- Text Input & Send Button -->
+        <div class="input-group">
+            <input type="text" id="searchInput" placeholder="Type Message..." autocomplete="off">
+            <button class="btn-send" id="sendBtn" title="Send message" data-id="@ViewBag.id">
+                <iconify-icon icon="mdi:send"></iconify-icon>
             </button>
         </div>
-        <div class="d-flex flex-row mt-2">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text" id="emma">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text" id="esve">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                </div>
-            </div>
 
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text" id="rodrigo">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                </div>
+        <!-- File Upload -->
+        <div class="file-upload-section">
+            <div class="file-input-wrapper">
+                <input type="file" id="fileInput" onchange="handleFileSelect(event)">
+                <button class="btn-file" onclick="document.getElementById('fileInput').click()">
+                    <iconify-icon icon="mdi:paperclip"></iconify-icon>
+                    <span>Attach File</span>
+                </button>
             </div>
+            <span class="file-name" id="fileName">No file selected</span>
+            <button class="btn-remove-file" id="removeFileBtn" onclick="removeFile()" style="display: none;" title="Remove file">
+                <iconify-icon icon="mdi:close"></iconify-icon>
+            </button>
+        </div>
+    </div>
 
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text" id="brandon">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                </div>
+    <!-- Status Messages -->
+    <div id="loadingMessage" class="message-status" style="display: none;">
+        <div class="loading-spinner">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="rotating-logo">
+                <!-- Outer Diamond Border -->
+                <g class="diamond-border">
+                    <rect x="10" y="10" width="60" height="60" rx="8" fill="none" stroke="url(#gradientBorder)" stroke-width="2" transform="rotate(45 40 40)" />
+                    <circle cx="10" cy="10" r="3" fill="url(#gradientBorder)" transform="rotate(45 40 40) translate(30 -30)" />
+                    <circle cx="70" cy="10" r="3" fill="url(#gradientBorder)" transform="rotate(45 40 40) translate(-30 -30)" />
+                    <circle cx="10" cy="70" r="3" fill="url(#gradientBorder)" transform="rotate(45 40 40) translate(30 30)" />
+                    <circle cx="70" cy="70" r="3" fill="url(#gradientBorder)" transform="rotate(45 40 40) translate(-30 30)" />
+                </g>
+
+                <!-- Inner rotating content -->
+                <g class="inner-content">
+                    <!-- Blue Gradient Quadrant -->
+                    <rect x="20" y="20" width="20" height="20" fill="url(#gradientBlue)" rx="3" />
+
+                    <!-- Orange Gradient Quadrant -->
+                    <rect x="40" y="20" width="20" height="20" fill="url(#gradientOrange)" rx="3" />
+
+                    <!-- Pink Gradient Quadrant -->
+                    <rect x="20" y="40" width="20" height="20" fill="url(#gradientPink)" rx="3" />
+
+                    <!-- Purple Gradient Quadrant -->
+                    <rect x="40" y="40" width="20" height="20" fill="url(#gradientPurple)" rx="3" />
+
+                    <!-- Center Circle -->
+                    <circle cx="40" cy="40" r="10" fill="url(#gradientCenter)" filter="url(#shadow)" />
+                </g>
+
+                <!-- Text Label -->
+                <g class="label-text" transform="translate(40, 68)">
+                    <rect x="-20" y="-8" width="40" height="16" rx="4" fill="url(#gradientLabel)" />
+                    <text x="0" y="3" font-size="10" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">ZAN-AI</text>
+                </g>
+
+                <!-- Gradients -->
+                <defs>
+                    <linearGradient id="gradientBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#3C55E6;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#768BFF;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="gradientOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FF7401;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FFB347;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="gradientPink" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#E20262;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FC74AE;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="gradientPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#A373D7;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#D5B8E8;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="gradientCenter" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FF7401;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#E20262;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#3C55E6;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="gradientLabel" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#3C55E6;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#768BFF;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="gradientBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#3C55E6;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#A373D7;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FF7401;stop-opacity:1" />
+                    </linearGradient>
+                    <filter id="shadow">
+                        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3" />
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+        <span class="loading-dots">Loading</span>
+    </div>
+
+    <div id="discussionMessage" class="message-status" style="display: none;">
+        <span class="status-icon">
+            <iconify-icon icon="mdi:chat-processing" class="pulse-icon"></iconify-icon>
+        </span>
+        <span>I'm discussing the work with my team...</span>
+    </div>
+</div>
+
+<!-- ===== REPORT SECTION ===== -->
+<div id="reportSection" class="report-section" style="display: none;">
+    <div class="report-container">
+        <!-- Report Header -->
+        <div class="report-header">
+            <div class="report-title-box">
+                <h1 class="report-title">Research Analysis Report</h1>
+                <p class="report-subtitle">Generated by Zan-AI • Today</p>
             </div>
-
-
         </div>
 
+        <!-- Report Content -->
+        <div class="report-content">
+            <div class="report-section-box">
+                <h2 class="report-section-title">  Key Findings</h2>
+                <div class="report-insights">
+                    <div class="insight-card">
+                        <div class="insight-number">87%</div>
+                        <div class="insight-label">Data Accuracy</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-number">156</div>
+                        <div class="insight-label">Data Points Analyzed</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-number">12</div>
+                        <div class="insight-label">Key Insights Found</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-number">4.8/5</div>
+                        <div class="insight-label">Quality Score</div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="report-section-box">
+                <h2 class="report-section-title"> Analysis Summary</h2>
+                <p class="report-text">
+                    Our AI team has thoroughly analyzed your research with advanced algorithms and machine learning models.
+                    The analysis identified significant patterns, trends, and actionable insights from the provided data.
+                </p>
+            </div>
+
+            <div class="report-section-box">
+                <h2 class="report-section-title"> Recommendations</h2>
+                <div class="report-recommendations">
+                    <div class="recommendation-item">
+                        <span class="recommendation-number">1</span>
+                        <div class="recommendation-text">
+                            <h4>Focus on Data Quality</h4>
+                            <p>Ensure consistent data validation across all sources</p>
+                        </div>
+                    </div>
+                    <div class="recommendation-item">
+                        <span class="recommendation-number">2</span>
+                        <div class="recommendation-text">
+                            <h4>Optimize Workflow</h4>
+                            <p>Implement automation for repetitive analysis tasks</p>
+                        </div>
+                    </div>
+                    <div class="recommendation-item">
+                        <span class="recommendation-number">3</span>
+                        <div class="recommendation-text">
+                            <h4>Scale Infrastructure</h4>
+                            <p>Consider expanding resources for larger datasets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Report Actions -->
+        <div class="report-actions">
+            <button class="btn-action btn-download" onclick="downloadReport()">
+                <iconify-icon icon="mdi:download"></iconify-icon>
+                <span>Download Report</span>
+            </button>
+            <button class="btn-action btn-podcast" onclick="generatePodcast()">
+                <iconify-icon icon="mdi:podcast"></iconify-icon>
+                <span>Generate Podcast</span>
+            </button>
+            <button class="btn-action btn-interactive" onclick="showInteractiveDoc()">
+                <iconify-icon icon="mdi:file-interactive"></iconify-icon>
+                <span>Interactive Document</span>
+            </button>
+        </div>
+
+        <!-- Close Button -->
+        <button class="btn-close-report" onclick="closeReport()" title="Close report">
+            <iconify-icon icon="mdi:close"></iconify-icon>
+        </button>
+    </div>
+</div>
+
+<!-- ===== OVERLAY BOX PARA LAS TARJETAS ===== -->
+<div class="cards-overlay" id="cardsOverlay">
+    <div class="cards-background">
+        <!-- NOTA: Para agregar un GIF en lugar de las tarjetas, reemplaza todo el contenido de cards-background por:
+            <img src="tu-gif.gif" alt="Animation" style="width: 100%; max-width: 800px; border-radius: 20px;">
+        -->
+        <div class="card-bg-item card-bg-blue">
+            <div class="speech-bubble speech-bubble-1">Analyzing data...</div>
+            <div class="character-icon talking-animation">
+                <iconify-icon icon="game-icons:wolf-head"></iconify-icon>
+            </div>
+            <div class="card-bg-title">Smart Wolf</div>
+            <div class="pulse-dot"></div>
+        </div>
+
+        <div class="card-bg-item card-bg-pink">
+            <div class="speech-bubble speech-bubble-2">Great idea!</div>
+            <div class="character-icon talking-animation" style="animation-delay: 0.2s;">
+                <iconify-icon icon="game-icons:salamander"></iconify-icon>
+            </div>
+            <div class="card-bg-title">Creative Axolotl</div>
+            <div class="pulse-dot"></div>
+        </div>
+
+        <div class="card-bg-item card-bg-orange">
+            <div class="speech-bubble speech-bubble-3">I agree!</div>
+            <div class="character-icon talking-animation" style="animation-delay: 0.4s;">
+                <iconify-icon icon="game-icons:parrot"></iconify-icon>
+            </div>
+            <div class="card-bg-title">Curious Parrot</div>
+            <div class="pulse-dot"></div>
+        </div>
+
+        <div class="card-bg-item card-bg-purple">
+            <div class="speech-bubble speech-bubble-4">Perfect!</div>
+            <div class="character-icon talking-animation" style="animation-delay: 0.6s;">
+                <img src="Jaguar.gif" alt="Animation" style="width: 100%; max-width: 1000px; border-radius: 30px;">
+
+            </div>
+            <div class="card-bg-title">Fast Leopard</div>
+            <div class="pulse-dot"></div>
+        </div>
     </div>
 </div>
 
@@ -53,6 +274,232 @@
         const urlCrearConversacion = '@ConfigurationUrl.GetBaseUrl()/conversation';
         const urlChecarConversacion = '@ConfigurationUrl.GetBaseUrl()/desarrolloConversacion'
     </script>
+    <script>
+        let isLoading = false;
+        let selectedFile = null;
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                selectedFile = file;
+                document.getElementById('fileName').textContent = file.name;
+                document.getElementById('fileName').classList.add('has-file');
+                document.getElementById('removeFileBtn').style.display = 'flex';
+                console.log('File selected:', file.name);
+            }
+        }
+
+        function removeFile() {
+            selectedFile = null;
+            document.getElementById('fileInput').value = '';
+            document.getElementById('fileName').textContent = 'No file selected';
+            document.getElementById('fileName').classList.remove('has-file');
+            document.getElementById('removeFileBtn').style.display = 'none';
+            console.log('File removed');
+        }
+
+        async function sendMessage(id) {
+            const input = document.getElementById('searchInput');
+            const message = input.value.trim();
+
+            if (!message && !selectedFile) {
+                       Swal.fire({
+                      title: "nothing here",
+                       text: "Please write a message or attach a file!",
+                       icon: "warning"
+                       });
+                return;
+            }
+
+            if (isLoading) {
+                return;
+            }
+
+            isLoading = true;
+
+            
+            if (selectedFile) {
+                console.log('File attached:', selectedFile.name);
+            }
+
+            // Mostrar loading y tarjetas AL MISMO TIEMPO
+            showLoadingMessage();
+            const cardsOverlay = document.getElementById('cardsOverlay');
+            cardsOverlay.classList.add('active');
+            await startConversation(id , message);
+
+            input.value = '';
+
+            // TOTAL 13 SEGUNDOS
+            // 1. Loading + Tarjetas por 3 segundos
+            setTimeout(() => {
+                hideLoadingMessage();
+                showDiscussionMessage();
+
+                if (selectedFile) {
+                    removeFile();
+                }
+
+                // 2. Discussion + Tarjetas por 10 segundos más
+                setTimeout(() => {
+                    hideDiscussionMessage();
+                    cardsOverlay.classList.remove('active');
+                    stopConversation();
+
+                    // 3. Mostrar reporte
+                    showReport();
+                    isLoading = false;
+                }, 20000);
+            }, 5000);
+        }
+
+        function showLoadingMessage() {
+            document.getElementById('loadingMessage').style.display = 'flex';
+        }
+
+        function hideLoadingMessage() {
+            document.getElementById('loadingMessage').style.display = 'none';
+        }
+
+        function showDiscussionMessage() {
+            document.getElementById('discussionMessage').style.display = 'flex';
+        }
+
+        function hideDiscussionMessage() {
+            document.getElementById('discussionMessage').style.display = 'none';
+        }
+
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        window.addEventListener('load', function() {
+            document.getElementById('searchInput').focus();
+            console.log('Zan-AI loaded successfully!');
+        });
+
+        // ===== CONVERSATION ANIMATION =====
+        const conversations = [
+            [
+                { card: 0, text: "Analyzing data..." },
+                { card: 1, text: "Great idea!" },
+                { card: 2, text: "I agree!" },
+                { card: 3, text: "Perfect!" }
+            ],
+            [
+                { card: 0, text: "Let me think..." },
+                { card: 1, text: "Excellent point!" },
+                { card: 2, text: "Interesting!" },
+                { card: 3, text: "Definitely!" }
+            ],
+            [
+                { card: 0, text: "Processing..." },
+                { card: 1, text: "Smart choice!" },
+                { card: 2, text: "Totally!" },
+                { card: 3, text: "No doubt!" }
+            ]
+        ];
+
+        let conversationInterval = null;
+        let conversationIndex = 0;
+
+        async function startConversation(id,topic) {
+            if (conversationInterval) {
+                clearInterval(conversationInterval);
+            }
+             let id_conversacion = await iniciarConversacion(id , topic);
+
+
+             const intervalId = setInterval(() => checarConversacion(id_conversacion), 2000);
+        }
+
+        function stopConversation() {
+            if (conversationInterval) {
+                clearInterval(conversationInterval);
+                conversationInterval = null;
+            }
+        }
+
+        function updateSpeechBubble(cardIndex, text) {
+            const bubbleClasses = ['speech-bubble-1', 'speech-bubble-2', 'speech-bubble-3', 'speech-bubble-4'];
+            const targetBubble = document.querySelector(`.${bubbleClasses[cardIndex]}`);
+            if (targetBubble) {
+                targetBubble.style.animation = 'none';
+                setTimeout(() => {
+                    targetBubble.textContent = text;
+                    targetBubble.style.animation = 'speechPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                }, 10);
+            }
+        }
+
+        // ===== REPORT FUNCTIONS =====
+        function showReport() {
+            document.getElementById('reportSection').style.display = 'block';
+        }
+
+        function closeReport() {
+            document.getElementById('reportSection').style.display = 'none';
+            isLoading = false;
+        }
+
+        function downloadReport() {
+            const btn = event.target.closest('.btn-download');
+            const originalHTML = btn.innerHTML;
+
+            btn.innerHTML = '<iconify-icon icon="mdi:loading" class="spin-icon"></iconify-icon><span>Downloading...</span>';
+            btn.disabled = true;
+
+            // Simular descarga
+            setTimeout(() => {
+                // Crear contenido del PDF simulado
+                const reportContent = document.querySelector('.report-container').innerText;
+                const element = document.createElement('a');
+                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(reportContent));
+                element.setAttribute('download', 'Zan-AI-Report-' + new Date().getTime() + '.txt');
+                element.style.display = 'none';
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+
+                btn.innerHTML = '<iconify-icon icon="mdi:check-circle"></iconify-icon><span>Downloaded!</span>';
+
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.disabled = false;
+                }, 2000);
+            }, 2000);
+        }
+        $("#sendBtn").on("click" , async function (){
+            let id = $(this).data("id");
+            sendMessage(id);
+        });
+
+        function generatePodcast() {
+            const btn = event.target.closest('.btn-podcast');
+            const originalHTML = btn.innerHTML;
+
+            btn.innerHTML = '<iconify-icon icon="mdi:loading" class="spin-icon"></iconify-icon><span>Generating...</span>';
+            btn.disabled = true;
+
+            // Simular generación de podcast
+            setTimeout(() => {
+                btn.innerHTML = '<iconify-icon icon="mdi:check-circle"></iconify-icon><span>Podcast Ready!</span>';
+
+                // Simular reproducción
+                setTimeout(() => {
+                    alert('🎙️ Podcast generated successfully!\n\nPodcast Title: "Zan-AI Research Analysis"\nDuration: 8 minutes\n\n(In production, this would open an audio player)');
+                    btn.innerHTML = originalHTML;
+                    btn.disabled = false;
+                }, 1000);
+            }, 3000);
+        }
+
+       
+    </script>
+    <script src="~/js/InteractivePage.js"></script>
+
 
     <script>
         async function iniciarConversacion(id , topic){
@@ -74,6 +521,7 @@
              return;
             }
             return response.id;
+
         }
          async function checarConversacion(id){
             let url = `${urlChecarConversacion}?id=${id}`;
@@ -92,10 +540,10 @@
                    text: response.message
              });
             }
-             $("#esve").text(response.esve);
-             $("#emma").text(response.emma);
-             $("#brandon").text(response.brandon);
-             $("#rodrigo").text(response.rodri);
+            updateSpeechBubble(0 , response.esve);
+            updateSpeechBubble(1 , response.emma);
+            updateSpeechBubble(2 , response.brandon);
+            updateSpeechBubble(3 , response.rodri);
              return;
             }
         

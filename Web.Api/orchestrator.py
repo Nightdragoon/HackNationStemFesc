@@ -29,11 +29,11 @@ class Orchestrator:
         prompt = (
             f"Eres {agent['name']}, {agent['role']}.\n"
             f"Estás participando en un debate profesional sobre tecnología.\n"
-            f"Tu respuesta debe ser breve (4 a 6 oraciones), reflexiva y natural.\n"
+            f"Tu respuesta debe ser breve (4 a 6 oraciones) o menos de 300 caracteres, reflexiva y natural.\n"
             f"Responde específicamente al siguiente comentario anterior:\n\n"
             f"'{previous_message}'\n\n"
             f"Historial reciente de la conversación:\n{chr(10).join(self.history[-5:])}\n\n"
-            f"Escribe tu respuesta como si realmente participaras en el diálogo."
+            f"Escribe tu respuesta como si realmente participaras en el diálogo. say everything in english"
         )
 
         response = self.model.generate_content(prompt)
@@ -53,6 +53,11 @@ class Orchestrator:
         response = self.model.generate_content(intro_prompt)
         first_reply = response.text.strip()
         self.history.append(f"{first_agent['name']}: {first_reply}")
+        smnt_first = Insert(self.Base.classes.conversacion).values(nombreAgente=first_agent['name'], mensajeAgente=first_reply,
+                                                             idConversacion=self.guid)
+        with self.engine.connect() as connection:
+            connection.execute(smnt_first)
+            connection.commit()
 
         # 2️⃣ Rondas de debate
         for round_num in range(2):
