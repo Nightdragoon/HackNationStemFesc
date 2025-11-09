@@ -6,6 +6,7 @@ from UsuarioBuscar import UsuarioBuscar
 from fastapi.middleware.cors import CORSMiddleware
 from orchestrator import Orchestrator
 from RespuestaConversacionActual import RespuestaConversacionActual
+from HistorialInstancias import HistorialInstancia
 
 engine = create_engine("mysql+pymysql://upiw3mqa58obep4h:VMqMoO6MuFgXjBt6ddl@b96lcxztraqbollhfyj6-mysql.services.clever-cloud.com:20670/b96lcxztraqbollhfyj6")
 
@@ -89,6 +90,24 @@ async  def insertarUsuario(usuario: UsuarioInsertar):
         return {"isSuccess": True}
     except Exception as e:
         return {"isSuccess": False , "message": str(e)}
+
+@app.get("/historial")
+async def historial(id: int):
+   try:
+       datos = []
+       historial = Select(Base.classes.Instancia).where(Base.classes.Instancia.idUsuario == id)
+       with engine.connect() as connection:
+           result = connection.execute(historial)
+           for row in result:
+               datos.append(HistorialInstancia(row._data[1], row._data[0], row._data[2]))
+           return {"isSuccess": True, "data": datos}
+   except Exception as e:
+        return {"isSuccess": False, "message": str(e)}
+
+
+
+
+
 
 
 @app.post("/loginUsuario")
