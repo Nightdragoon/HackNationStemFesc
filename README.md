@@ -16,6 +16,8 @@ The final result is presented in an **interactive knowledge map** that visualize
 * **Organic "Sketch" Style:** The graph is styled to look like a "hand-drawn" concept map on a whiteboard, complete with pastel colors and handwritten fonts.
 * **Verifiable Reasoning ("Tentacles"):** Click on a key concept in the map, and a "tentacle" will appear with the exact discussion snippet where the agents talked about that topic!
 * **PDF Report Generation:** Exports the complete discussion, ingestion summary, and references into a formal scientific PDF report using **ReportLab**.
+* **MVC razor pages
+
 
 ## 💻 Tech Stack
 
@@ -27,10 +29,18 @@ The final result is presented in an **interactive knowledge map** that visualize
     * **Hugging Face Embeddings:** To generate `all-MiniLM-L6-v2` vectors.
     * **ChromaDB:** As the in-memory vector database.
     * **ReportLab:** For PDF report generation.
+    * **SqlAlchemy for the ORM
+    * **pydantic
+    * **basemodel
+    * **MVC
 * **Frontend:**
     * **HTML5, CSS3, JavaScript (ES6+)**
     * **Vis.js (vis-network):** For interactive graph rendering.
     * **Kalam (Google Font):** For the "hand-drawn" style.
+    * **sweetalert
+    * **jquery
+    * **modals
+  
 
 ## 🏗️ How It Works (Architecture)
 
