@@ -2,3 +2,5 @@ uvicorn
 fastapi
 sqlalchemy
 pymysql
+protobuf
+google-generativeai
