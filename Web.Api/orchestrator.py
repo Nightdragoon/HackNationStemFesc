@@ -1,10 +1,13 @@
 import google.generativeai as genai
-
+from sqlalchemy import Engine , Select , Insert
 class Orchestrator:
-    def __init__(self, api_key):
+    def __init__(self, api_key , engine , Base , guid):
         # Configurar API
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel("gemini-2.5-flash")
+        self.engine = engine
+        self.Base = Base
+        self.guid = guid
 
         # Agentes
         self.agents = [
@@ -38,7 +41,6 @@ class Orchestrator:
 
     def run_discussion(self, topic):
         """Inicia una conversación entre los agentes sobre el tema dado."""
-        print(f"\n🧠 Conversación sobre: {topic}\n")
 
         # 1️⃣ Primer agente introduce el tema
         first_agent = self.agents[0]
@@ -51,7 +53,6 @@ class Orchestrator:
         response = self.model.generate_content(intro_prompt)
         first_reply = response.text.strip()
         self.history.append(f"{first_agent['name']}: {first_reply}")
-        print(f"{first_agent['name']}: {first_reply}\n")
 
         # 2️⃣ Rondas de debate
         for round_num in range(2):
@@ -59,7 +60,10 @@ class Orchestrator:
                 previous_message = self.history[-1]
                 reply = self.generate_reply(agent, previous_message)
                 line = f"{agent['name']}: {reply}"
-                print(line + "\n")
                 self.history.append(line)
+                smnt = Insert(self.Base.classes.conversacion).values(nombreAgente = agent['name'] , mensajeAgente = reply , idConversacion = self.guid)
+                with self.engine.connect() as connection:
+                    connection.execute(smnt)
+                    connection.commit()
 
         print("🧩 Fin de la discusión.\n")

@@ -16,6 +16,7 @@ namespace FrontEnd.Controllers
         public IActionResult Index(int id = 1)
         {
             ViewBag.Id = id;
+            
             return View();
         }
         public IActionResult Login()

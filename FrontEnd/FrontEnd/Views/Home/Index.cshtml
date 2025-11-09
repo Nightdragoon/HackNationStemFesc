@@ -1,8 +1,114 @@
-﻿@{
+﻿@using FrontEnd.Dtos
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="d-flex flex-column">
+        <p>what we will work today</p>
+
+        <div class="d-flex flex-row">
+            <input class="form-control" id="barraBusqueda" />
+            <button class="btn btn-secondary" id="btnEnviarDatos" data-id=@ViewBag.id>
+                <i class="bi bi-send"></i>
+            </button>
+        </div>
+        <div class="d-flex flex-row mt-2">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text" id="emma">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text" id="esve">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text" id="rodrigo">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text" id="brandon">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
 </div>
+
+@section Scripts{
+    <script>
+        const urlCrearConversacion = '@ConfigurationUrl.GetBaseUrl()/conversation';
+        const urlChecarConversacion = '@ConfigurationUrl.GetBaseUrl()/desarrolloConversacion'
+    </script>
+
+    <script>
+        async function iniciarConversacion(id , topic){
+            let url = `${urlCrearConversacion}?id=${id}&topic=${topic}`;
+
+            let result = await fetch(url , {
+                method:"GET",
+                headers:{
+                    "accept":"application/json"
+                }
+            })
+            let response = await result.json()
+            if(response.isSuccess == false){
+                 Swal.fire({
+                   icon: "error",
+                   title: "Oops...",
+                   text: response.message
+             });
+             return;
+            }
+            return response.id;
+        }
+         async function checarConversacion(id){
+            let url = `${urlChecarConversacion}?id=${id}`;
+
+            let result = await fetch(url , {
+                method:"GET",
+                headers:{
+                    "accept":"application/json"
+                }
+            })
+            let response = await result.json()
+            if(response.isSuccess == false){
+                 Swal.fire({
+                   icon: "error",
+                   title: "Oops...",
+                   text: response.message
+             });
+            }
+             $("#esve").text(response.esve);
+             $("#emma").text(response.emma);
+             $("#brandon").text(response.brandon);
+             $("#rodrigo").text(response.rodri);
+             return;
+            }
+        
+
+        $("#btnEnviarDatos").on("click" , async function(){
+            let id = $(this).data('id');
+            let topic = $("#barraBusqueda").val();
+            let id_conversacion = await iniciarConversacion(id , topic);
+            const intervalId = setInterval(() => checarConversacion(id_conversacion), 2000); // cada 2s
+
+            
+            
+
+        })
+    </script>
+}
